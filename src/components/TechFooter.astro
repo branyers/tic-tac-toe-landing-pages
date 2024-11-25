@@ -1,0 +1,126 @@
+---
+const technologies = [
+  { name: 'React', icon: '⚛️' },
+  { name: 'API', icon: '🔌' },
+  { name: 'CSS', icon: '🎨' },
+  { name: 'Confetti.js', icon: '✨' },
+  { name: 'Redux', icon: '🔄' },
+  { name: 'Astro', icon: '🚀' }
+];
+---
+
+<footer>
+  <div class="tech-container">
+    <h3>Tecnologías Utilizadas</h3>
+    <div class="tech-grid">
+      {technologies.map(tech => (
+        <div class="tech-card">
+          <span class="tech-icon">{tech.icon}</span>
+          <span class="tech-name">{tech.name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: linear-gradient(to right, #2c3e50, #3498db);
+    padding: 4rem 0;
+    margin-top: 4rem;
+  }
+
+  .tech-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+  }
+
+  h3 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+  }
+
+  .tech-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 12px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .tech-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .tech-icon {
+    font-size: 2.5rem;
+    display: block;
+  }
+
+  .tech-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Stagger animation for cards */
+  .tech-card {
+    animation-delay: calc(var(--index) * 0.1s);
+  }
+
+  .tech-card:nth-child(1) { --index: 1; }
+  .tech-card:nth-child(2) { --index: 2; }
+  .tech-card:nth-child(3) { --index: 3; }
+  .tech-card:nth-child(4) { --index: 4; }
+  .tech-card:nth-child(5) { --index: 5; }
+  .tech-card:nth-child(6) { --index: 6; }
+
+  @media (max-width: 768px) {
+    .tech-grid {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+    }
+
+    .tech-card {
+      padding: 1rem;
+    }
+
+    .tech-icon {
+      font-size: 2rem;
+    }
+
+    .tech-name {
+      font-size: 1rem;
+    }
+  }
+</style>

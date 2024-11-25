@@ -1,0 +1,322 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TechFooter from '../components/TechFooter.astro';
+---
+
+<Layout title="Tic Tac Toe Quiz Game">
+  <main>
+    <section id="about" class="hero">
+      <div class="content">
+        <h1>Tic Tac Toe Quiz</h1>
+        <p>
+          ¡Bienvenido al Tic Tac Toe Quiz! Una versión desafiante del clásico tres en raya
+          en un tablero 5x5, combinado con preguntas de conocimiento general. ¡Demuestra tus
+          habilidades y conocimientos mientras intentas conseguir tres en línea!
+        </p>
+      </div>
+    </section>
+
+    <section id="categories">
+      <div class="content">
+        <h2>Categorías de Preguntas</h2>
+        <div class="categories-grid">
+          <div class="category">
+            <span class="category-icon">🌍</span>
+            <h3>Geografía</h3>
+            <p>Preguntas sobre países, capitales y lugares del mundo</p>
+          </div>
+          <div class="category">
+            <span class="category-icon">📚</span>
+            <h3>Arte y Literatura</h3>
+            <p>Literatura clásica, arte y cultura general</p>
+          </div>
+          <div class="category">
+            <span class="category-icon">🎮</span>
+            <h3>Entretenimiento</h3>
+            <p>Cine, música, videojuegos y cultura pop</p>
+          </div>
+          <div class="category">
+            <span class="category-icon">🔬</span>
+            <h3>Ciencia y Naturaleza</h3>
+            <p>Ciencia, biología y el mundo natural</p>
+          </div>
+          <div class="category">
+            <span class="category-icon">⚽</span>
+            <h3>Deportes y Ocio</h3>
+            <p>Deportes, atletas y eventos deportivos</p>
+          </div>
+          <div class="category">
+            <span class="category-icon">🏺</span>
+            <h3>Historia</h3>
+            <p>Eventos históricos y personajes importantes</p>
+          </div>
+          <div class="category">
+            <span class="category-icon">🏆</span>
+            <h3>Para Pro</h3>
+            <p>Preguntas desafiantes para expertos</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-to-play">
+      <div class="content">
+        <h2>Cómo Jugar</h2>
+        <div class="instructions">
+          <ol>
+            <li>Juega en un tablero expandido de 5x5 casillas.</li>
+            <li>Los jugadores se turnan para colocar X u O en el tablero.</li>
+            <li>Al hacer clic en una casilla, aparecerá una pregunta.</li>
+            <li>Si respondes correctamente, podrás colocar tu marca (X u O).</li>
+            <li>Si respondes incorrectamente, perderás tu turno.</li>
+            <li>Gana el primer jugador que consiga tres marcas en línea (horizontal, vertical o diagonal).</li>
+            <li>¡El tablero más grande significa más oportunidades y estrategias!</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="developers">
+      <div class="content">
+        <h2>Nuestro Equipo</h2>
+        <div class="developers-grid">
+          <div class="developer-card">
+            <div class="dev-icon">👨‍💻</div>
+            <h3>Branyes Nuñez</h3>
+            <p>Desarrollador Principal</p>
+          </div>
+          <div class="developer-card">
+            <div class="dev-icon">👨‍💻</div>
+            <h3>Leonel Lara</h3>
+            <p>Desarrollador Principal</p>
+          </div>
+          <div class="developer-card">
+            <div class="dev-icon">👨‍💻</div>
+            <h3>Samuel Matos</h3>
+            <p>Desarrollador Principal</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="game">
+      <div class="content">
+        <h2>¡Juega Ahora!</h2>
+        <div class="cta-container">
+          <a 
+            href="https://zingy-puppy-d45a0f.netlify.app/" 
+            target="_blank" 
+            class="play-button"
+          >
+            <span class="button-text">Jugar</span>
+            <span class="button-icon">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <TechFooter />
+</Layout>
+
+<style>
+  main {
+    margin-top: 4rem;
+  }
+
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  section {
+    padding: 4rem 0;
+  }
+
+  .hero {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 8rem 0 4rem 0;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: white;
+  }
+
+  .hero p {
+    font-size: 1.25rem;
+    max-width: 800px;
+    line-height: 1.6;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .category {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .category:hover {
+    transform: translateY(-5px);
+  }
+
+  .category-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .category h3 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+  }
+
+  .category p {
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .instructions {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .instructions ol {
+    margin-left: 1.5rem;
+  }
+
+  .instructions li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .developers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .developer-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .developer-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .dev-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .developer-card h3 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+  }
+
+  .developer-card p {
+    color: #666;
+  }
+
+  .cta-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+  }
+
+  .play-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  }
+
+  .play-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+    background: #2980b9;
+  }
+
+  .button-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .play-button:hover .button-icon {
+    transform: translateX(5px);
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    .categories-grid,
+    .developers-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .category,
+    .developer-card {
+      padding: 1.5rem;
+    }
+
+    .category-icon {
+      font-size: 2rem;
+    }
+
+    .play-button {
+      font-size: 1.25rem;
+      padding: 0.875rem 1.75rem;
+    }
+  }
+</style>
